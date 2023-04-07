@@ -5,8 +5,9 @@ let prevButton = document.getElementById("prev");
 let nextButton = document.getElementById("next");
 
 function fetchUsers() {
-    fetch(`https://content.newtonschool.co/v1/pr/main/users?page=${pageNumber}`)
-        .then((response) => response.json())
+    //fetch(`https://content.newtonschool.co/v1/pr/main/users?page=${pageNumber}`)
+     fetch(`https://dummy.restapiexample.com/api/v1/employees`)  
+    .then((response) => response.json())
         .then((data) => {
             for (let i = 0; i < 2; i++) {
                 let user = data[i];
@@ -34,7 +35,6 @@ prevButton.addEventListener("click", function () {
         fetchUsers();
     }
 });
-
 nextButton.addEventListener("click", function () {
     if (pageNumber < 6) {
         pageNumber++;
